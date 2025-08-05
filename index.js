@@ -17,7 +17,7 @@ app.use(express.json());
 const port = process.env.PORT || 5000;
 
 const corsOptions = {
-origin: ['http://localhost:5173', 'http://localhost:5000'],
+origin: ['https://chatkro-ochre.vercel.app/', 'http://localhost:5000'],
   methods: ['GET','POST','PUT','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],
   credentials: true, // if you're using cookies/tokens
@@ -45,7 +45,7 @@ const server = app.listen(port, () => {
 const io =require('socket.io')(server,{
   pingTimeout: 60000,
   cors: {
-    origin:"http://localhost:5173"
+    origin:"https://chatkro-ochre.vercel.app/"
   }
 });
 
